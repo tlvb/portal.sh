@@ -2,7 +2,7 @@
 
 # caveat emptor
 
-#echo apperture_science_laboratory > /etc/hostname
+#echo aperture_science_laboratory > /etc/hostname
 
 blue_location=/dev/null
 orange_location=/dev/null
