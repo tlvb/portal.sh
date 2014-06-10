@@ -29,9 +29,15 @@ check_if_applicable () { #{{{
 	return 0
 } #}}}
 mkblue () { #{{{
-	[ "$1" != "$blue_location" ] && [ "$blue_location" != /dev/null ] && rmblue
-	blue_location="$1"
-	orange_location="$2"
+	tmp1=$1
+	tmp2=$2
+	if [ "$2" != /dev/null ]; then
+		tmp1=$(getabsdir "$1")
+		tmp2=$(getabsdir "$2")
+	fi
+	[ "$tmp1" != "$blue_location" ] && [ "$blue_location" != /dev/null ] && rmblue
+	blue_location="$tmp1"
+	orange_location="$tmp2"
 	ln -sfT "$orange_location" "$blue_location/blue_portal"
 	if [ $orange_location != /dev/null ]; then
 		ln -sfT "$blue_location" "$orange_location/orange_portal"
@@ -41,9 +47,15 @@ mkblue () { #{{{
 	fi
 } #}}}
 mkorange () { #{{{
-	[ "$1" != "$orange_location" ] && [ "$orange_location" != /dev/null ] && rmorange
-	orange_location="$1"
-	blue_location="$2"
+	tmp1=$1
+	tmp2=$2
+	if [ "$2" != /dev/null ]; then
+		tmp1=$(getabsdir "$1")
+		tmp2=$(getabsdir "$2")
+	fi
+	[ "$tmp1" != "$orange_location" ] && [ "$orange_location" != /dev/null ] && rmorange
+	orange_location="$tmp1"
+	blue_location="$tmp2"
 	ln -sfT "$blue_location" "$orange_location/orange_portal"
 	if [ $blue_location != /dev/null ]; then
 		ln -sfT "$orange_location" "$blue_location/blue_portal"
