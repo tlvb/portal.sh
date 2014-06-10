@@ -9,10 +9,10 @@ location or aim it somewhere else as in `blue somedir`
 (or `orange somedir`).
 
 You can remove either portal with `rmblue` or `rmorange`.
-and jump through portals with `jump`. (The jump command
-is just a fancier cd, with some extra stuff like helping
-reorient you after the spatial confusion inflicted by
-teleportation.)
+and jump through portals with `jump` (as in `jump orange_portal`).
+The jump command is just a fancier `cd`, with some extra
+stuff like helping reorient you after the spatial confusion
+inflicted by teleportation.
 
 The participant should remember that while the portals
 are persistent, the knowledge of the location of the
